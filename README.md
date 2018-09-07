@@ -19,18 +19,5 @@ Nerves
 
 * Generic State Machine
   - Has a name
-  - Stored as a graph defined by its edges.
-  - Example:
-      ```
-        %StateMachine{
-          name: "light_switch",
-          edges: [
-            %Edge{ current_state: "on", transition: "toggle", next_state: "off" },
-            %Edge{ current_state: "off", transition: "toggle", next_state: "on" },
-            %Edge{ current_state: "on", trasition: "turn_on", next_state: "on" },
-            %Edge{ current_state: "on", trasition: "turn_off", next_state: "off" },
-            %Edge{ current_state: "off", trasitio: "turn_on", next_state: "on" },
-            %Edge{ current_state: "off", trasitio: "turn_off", next_state: "off" }
-          ]
-        }
-      ```
+  - Has a state
+  - Stored as a graph defined by its edges
