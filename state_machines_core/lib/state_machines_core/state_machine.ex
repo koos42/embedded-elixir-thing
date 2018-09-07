@@ -22,6 +22,8 @@ defmodule StateMachines.Core.StateMachine do
     |> Enum.uniq
   end
 
+  def get_state(%__MODULE__{state: state}), do: state
+
   def do_transition(state_machine, transition) do
     with {_state, _tranistion, new_state} <- find_edge(state_machine, transition),
     do: {:ok, %{state_machine | state: new_state}}
@@ -33,5 +35,4 @@ defmodule StateMachines.Core.StateMachine do
       edge_state == state_machine.state && edge_transition == transition
     end)
   end
-
 end
